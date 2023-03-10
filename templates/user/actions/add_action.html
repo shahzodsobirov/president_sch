@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{{ url_for("add_actions", user_id=user.id) }}" method="post">
+    <select name="action" id="">
+        {% for permission in permissions %}
+            <option value="{{ permission.id }}">{{ permission.name }}</option>
+        {% endfor %}
+    </select>
+    <button>Send</button>
+</form>
+</body>
+</html>
